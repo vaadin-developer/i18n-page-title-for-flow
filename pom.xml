@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright © 2018 Sven Ruppert (sven.ruppert@gmail.com)
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.rapidpm</groupId>
+    <artifactId>rapidpm-dependencies</artifactId>
+    <version>04.00.16-RPM</version>
+  </parent>
+
+  <groupId>org.rapidpm.vaadin</groupId>
+  <artifactId>i18n-page-title-for-flow</artifactId>
+  <name>Fluent API for Flow</name>
+  <version>00.08.00-RPM</version>
+
+  <packaging>pom</packaging>
+
+  <inceptionYear>2018</inceptionYear>
+  <organization>
+    <name>Sven Ruppert</name>
+    <url>https://github.com/svenruppert</url>
+  </organization>
+  <url>https://github.com/vaadin-developer/i18n-page-title-for-flow</url>
+
+  <scm>
+    <url>https://github.com/vaadin-developer/i18n-page-title-for-flow</url>
+    <connection>
+      scm:git:https://github.com/vaadin-developer/i18n-page-title-for-flow.git
+    </connection>
+    <developerConnection>
+      scm:git:https://github.com/vaadin-developer/i18n-page-title-for-flow.git
+    </developerConnection>
+    <tag>HEAD</tag>
+  </scm>
+  <developers>
+    <developer>
+      <name>Sven Ruppert</name>
+      <email>sven.ruppert@gmail.com</email>
+      <roles>
+        <role>Developer</role>
+      </roles>
+      <timezone>+1</timezone>
+    </developer>
+  </developers>
+  <issueManagement>
+    <system>Github</system>
+    <url>
+      https://github.com/vaadin-developer/i18n-page-title-for-flow/issues
+    </url>
+  </issueManagement>
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+      <comments>A business-friendly OSS license</comments>
+    </license>
+  </licenses>
+
+  <modules>
+    <module>page-title-impl</module>
+    <module>page-title-test</module>
+  </modules>
+
+  <properties>
+    <!--technical-->
+    <!--<maven.compiler.release>10</maven.compiler.release>-->
+    <maven.compiler.target>8</maven.compiler.target>
+    <maven.compiler.source>8</maven.compiler.source>
+
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+    <vaadin.version>13.0.3</vaadin.version>
+    <meecrowave.version>1.2.7</meecrowave.version>
+  </properties>
+
+  <repositories>
+    <repository>
+      <id>vaadin-addons</id>
+      <url>http://maven.vaadin.com/vaadin-addons</url>
+      <!--<url>http://maven.vaadin.com/</url>-->
+    </repository>
+  </repositories>
+
+
+  <dependencyManagement>
+    <dependencies>
+      <!--Vaadin -->
+      <dependency>
+        <groupId>com.vaadin</groupId>
+        <artifactId>vaadin-bom</artifactId>
+        <version>${vaadin.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <!--Infrastructure-->
+      <dependency>
+        <groupId>org.apache.meecrowave</groupId>
+        <artifactId>meecrowave-core</artifactId>
+        <version>${meecrowave.version}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.meecrowave</groupId>
+        <artifactId>meecrowave-specs-api</artifactId>
+        <version>${meecrowave.version}</version>
+        <scope>test</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+
+      </plugins>
+    </pluginManagement>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <configuration>
+          <failOnMissingWebXml>false</failOnMissingWebXml>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>4.0.1</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <!--Vaadin -->
+    <dependency>
+      <groupId>com.vaadin</groupId>
+      <artifactId>vaadin</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>com.vaadin</groupId>
+      <artifactId>vaadin-lumo-theme</artifactId>
+    </dependency>
+
+    <!--TDD-->
+    <dependency>
+      <groupId>org.apache.meecrowave</groupId>
+      <artifactId>meecrowave-core</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.meecrowave</groupId>
+      <artifactId>meecrowave-specs-api</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>

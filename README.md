@@ -4,6 +4,10 @@
 </center>
 
 # Vaadin V10 app with I18N Page Title, dynamically created
+[![](https://jitpack.io/v/vaadin-developer/i18n-page-title-for-flow.svg)](https://jitpack.io/#vaadin-developer/i18n-page-title-for-flow)
+[![](https://jitci.com/gh/vaadin-developer/i18n-page-title-for-flow/svg)](https://jitci.com/gh/vaadin-developer/i18n-page-title-for-flow)
+
+
 What I want to show in this example is, how you could deal with 
 a dynamic page title per view (or time or whatever)
 that will handle your browser Locale as well.

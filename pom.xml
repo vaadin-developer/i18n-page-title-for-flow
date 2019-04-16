@@ -30,7 +30,7 @@
 
   <groupId>org.rapidpm.vaadin</groupId>
   <artifactId>i18n-page-title-for-flow</artifactId>
-  <name>Fluent API for Flow</name>
+  <name>i18N Page Title for Flow</name>
   <version>00.08.00-RPM</version>
 
   <packaging>pom</packaging>

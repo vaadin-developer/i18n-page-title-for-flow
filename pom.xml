@@ -24,14 +24,14 @@
 
   <parent>
     <groupId>org.rapidpm</groupId>
-    <artifactId>rapidpm-dependencies</artifactId>
-    <version>04.00.16-RPM</version>
+    <artifactId>rapidpm-vaadin-dependencies-v14</artifactId>
+    <version>04.01.05-RPM</version>
   </parent>
 
   <groupId>org.rapidpm.vaadin</groupId>
   <artifactId>i18n-page-title-for-flow</artifactId>
   <name>i18N Page Title for Flow</name>
-  <version>00.08.01-RPM-SNAPSHOT</version>
+  <version>00.08.01-RPM</version>
 
   <packaging>pom</packaging>
 
@@ -84,25 +84,9 @@
 
   <properties>
     <!--technical-->
-    <!--<maven.compiler.release>10</maven.compiler.release>-->
-    <maven.compiler.target>8</maven.compiler.target>
-    <maven.compiler.source>8</maven.compiler.source>
-
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
-    <vaadin.version>13.0.3</vaadin.version>
+    <jdk.version>1.8</jdk.version>
     <meecrowave.version>1.2.7</meecrowave.version>
   </properties>
-
-  <repositories>
-    <repository>
-      <id>vaadin-addons</id>
-      <url>http://maven.vaadin.com/vaadin-addons</url>
-      <!--<url>http://maven.vaadin.com/</url>-->
-    </repository>
-  </repositories>
-
 
   <dependencyManagement>
     <dependencies>
@@ -110,73 +94,12 @@
       <dependency>
         <groupId>com.vaadin</groupId>
         <artifactId>vaadin-bom</artifactId>
-        <version>${vaadin.version}</version>
+        <version>${vaadin-v14.version}</version>
         <type>pom</type>
         <scope>import</scope>
-      </dependency>
-      <!--Infrastructure-->
-      <dependency>
-        <groupId>org.apache.meecrowave</groupId>
-        <artifactId>meecrowave-core</artifactId>
-        <version>${meecrowave.version}</version>
-        <scope>test</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.meecrowave</groupId>
-        <artifactId>meecrowave-specs-api</artifactId>
-        <version>${meecrowave.version}</version>
-        <scope>test</scope>
       </dependency>
     </dependencies>
   </dependencyManagement>
 
-  <build>
-    <pluginManagement>
-      <plugins>
 
-      </plugins>
-    </pluginManagement>
-
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-war-plugin</artifactId>
-        <configuration>
-          <failOnMissingWebXml>false</failOnMissingWebXml>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
-
-  <dependencies>
-    <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>javax.servlet-api</artifactId>
-      <version>4.0.1</version>
-      <scope>provided</scope>
-    </dependency>
-
-    <!--Vaadin -->
-    <dependency>
-      <groupId>com.vaadin</groupId>
-      <artifactId>vaadin</artifactId>
-    </dependency>
-
-    <dependency>
-      <groupId>com.vaadin</groupId>
-      <artifactId>vaadin-lumo-theme</artifactId>
-    </dependency>
-
-    <!--TDD-->
-    <dependency>
-      <groupId>org.apache.meecrowave</groupId>
-      <artifactId>meecrowave-core</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.meecrowave</groupId>
-      <artifactId>meecrowave-specs-api</artifactId>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
 </project>

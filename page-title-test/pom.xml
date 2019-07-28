@@ -22,7 +22,7 @@
   <parent>
     <groupId>org.rapidpm.vaadin</groupId>
     <artifactId>i18n-page-title-for-flow</artifactId>
-    <version>00.08.01-RPM-SNAPSHOT</version>
+    <version>00.08.01-RPM</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
@@ -32,4 +32,55 @@
     <maven.deploy.skip>true</maven.deploy.skip>
   </properties>
 
+
+  <dependencyManagement>
+    <dependencies>
+      <!--Infrastructure-->
+      <dependency>
+        <groupId>org.apache.meecrowave</groupId>
+        <artifactId>meecrowave-core</artifactId>
+        <version>${meecrowave.version}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.meecrowave</groupId>
+        <artifactId>meecrowave-specs-api</artifactId>
+        <version>${meecrowave.version}</version>
+        <scope>test</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>4.0.1</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <!--TDD-->
+    <dependency>
+      <groupId>org.apache.meecrowave</groupId>
+      <artifactId>meecrowave-core</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.meecrowave</groupId>
+      <artifactId>meecrowave-specs-api</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <configuration>
+          <failOnMissingWebXml>false</failOnMissingWebXml>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>

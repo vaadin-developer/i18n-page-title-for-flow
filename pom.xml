@@ -31,9 +31,9 @@
   <groupId>org.rapidpm.vaadin</groupId>
   <artifactId>i18n-page-title-for-flow</artifactId>
   <name>i18N Page Title for Flow</name>
-  <version>00.08.03-RPM-SNAPSHOT</version>
+  <version>00.08.03-RPM</version>
 
-  <packaging>pom</packaging>
+  <packaging>jar</packaging>
 
   <inceptionYear>2018</inceptionYear>
   <organization>
@@ -88,44 +88,44 @@
 
 
   <build>
-    <plugins>
-      <!--For Vaadin Directory deployment-->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jar-plugin</artifactId>
-        <configuration>
-          <archive>
-            <index>true</index>
-            <manifest>
-              <addClasspath>false</addClasspath>
-              <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-            </manifest>
-            <manifestEntries>
-              <Vaadin-Package-Version>${Vaadin-Package-Version}</Vaadin-Package-Version>
-            </manifestEntries>
-          </archive>
-        </configuration>
-      </plugin>
+<!--    <plugins>-->
+<!--      &lt;!&ndash;For Vaadin Directory deployment&ndash;&gt;-->
+<!--      <plugin>-->
+<!--        <groupId>org.apache.maven.plugins</groupId>-->
+<!--        <artifactId>maven-jar-plugin</artifactId>-->
+<!--        <configuration>-->
+<!--          <archive>-->
+<!--            <index>true</index>-->
+<!--            <manifest>-->
+<!--              <addClasspath>false</addClasspath>-->
+<!--              <addDefaultImplementationEntries>true</addDefaultImplementationEntries>-->
+<!--            </manifest>-->
+<!--&lt;!&ndash;            <manifestEntries>&ndash;&gt;-->
+<!--&lt;!&ndash;              <Vaadin-Package-Version>${Vaadin-Package-Version}</Vaadin-Package-Version>&ndash;&gt;-->
+<!--&lt;!&ndash;            </manifestEntries>&ndash;&gt;-->
+<!--          </archive>-->
+<!--        </configuration>-->
+<!--      </plugin>-->
 
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <configuration>
-          <appendAssemblyId>false</appendAssemblyId>
-          <descriptors>
-            <descriptor>assembly/assembly.xml</descriptor>
-          </descriptors>
-        </configuration>
-        <executions>
-          <execution>
-            <goals>
-              <goal>single</goal>
-            </goals>
-            <phase>install</phase>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
+<!--      <plugin>-->
+<!--        <groupId>org.apache.maven.plugins</groupId>-->
+<!--        <artifactId>maven-assembly-plugin</artifactId>-->
+<!--        <configuration>-->
+<!--          <appendAssemblyId>false</appendAssemblyId>-->
+<!--          <descriptors>-->
+<!--            <descriptor>assembly/assembly.xml</descriptor>-->
+<!--          </descriptors>-->
+<!--        </configuration>-->
+<!--        <executions>-->
+<!--          <execution>-->
+<!--            <goals>-->
+<!--              <goal>single</goal>-->
+<!--            </goals>-->
+<!--            <phase>install</phase>-->
+<!--          </execution>-->
+<!--        </executions>-->
+<!--      </plugin>-->
+<!--    </plugins>-->
   </build>
 
 </project>

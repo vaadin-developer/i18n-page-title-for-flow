@@ -17,10 +17,10 @@
 version: '3.5'
 
 services:
-  deploy:
+  deploy-i18n-page-title:
     image: svenruppert/maven-3.6.1-adopt:1.8.212-04
-    container_name: deploy
-    hostname: deploy
+    container_name: deploy-i18n-page-title
+    hostname: deploy-i18n-page-title
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
       - $PWD/:/usr/src/mymaven
@@ -30,4 +30,5 @@ services:
     #    command: 'mvn help:active-profiles
     command: 'mvn license:format clean deploy
                     -P_release
+                    -Pvaadin-install-nodejs
                     -Dmaven.test.skip=true '

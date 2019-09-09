@@ -24,14 +24,14 @@
 
   <parent>
     <groupId>org.rapidpm</groupId>
-    <artifactId>rapidpm-vaadin-dependencies-v14</artifactId>
-    <version>04.01.05-RPM</version>
+    <artifactId>rapidpm-vaadin-dependencies-vXX</artifactId>
+    <version>04.01.15-RPM</version>
   </parent>
 
   <groupId>org.rapidpm.vaadin</groupId>
   <artifactId>i18n-page-title-for-flow</artifactId>
   <name>i18N Page Title for Flow</name>
-  <version>00.08.02-RPM-SNAPSHOT</version>
+  <version>00.08.02-RPM</version>
 
   <packaging>pom</packaging>
 
@@ -77,29 +77,55 @@
     </license>
   </licenses>
 
-  <modules>
-    <module>page-title-impl</module>
-    <module>page-title-test</module>
-  </modules>
 
   <properties>
     <!--technical-->
     <jdk.version>1.8</jdk.version>
-    <meecrowave.version>1.2.7</meecrowave.version>
+    <!--Properties for Vaadin Directory-->
+    <Vaadin-Package-Version>1</Vaadin-Package-Version>
+    <Vaadin-Addon>${project.build.finalName}.${project.packaging}</Vaadin-Addon>
   </properties>
 
-  <dependencyManagement>
-    <dependencies>
-      <!--Vaadin -->
-      <dependency>
-        <groupId>com.vaadin</groupId>
-        <artifactId>vaadin-bom</artifactId>
-        <version>${vaadin-v14.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
 
+  <build>
+    <plugins>
+      <!--For Vaadin Directory deployment-->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <index>true</index>
+            <manifest>
+              <addClasspath>false</addClasspath>
+              <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+            </manifest>
+            <manifestEntries>
+              <Vaadin-Package-Version>${Vaadin-Package-Version}</Vaadin-Package-Version>
+            </manifestEntries>
+          </archive>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <configuration>
+          <appendAssemblyId>false</appendAssemblyId>
+          <descriptors>
+            <descriptor>assembly/assembly.xml</descriptor>
+          </descriptors>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <phase>install</phase>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
 
 </project>

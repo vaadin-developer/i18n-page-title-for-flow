@@ -31,7 +31,7 @@
   <groupId>org.rapidpm.vaadin</groupId>
   <artifactId>i18n-page-title-for-flow</artifactId>
   <name>i18N Page Title for Flow</name>
-  <version>00.08.02-RPM</version>
+  <version>00.08.03-RPM-SNAPSHOT</version>
 
   <packaging>pom</packaging>
 

@@ -15,5 +15,5 @@
 # limitations under the License.
 #
 
-docker rm deploy
+docker rm deploy-i18n-page-title
 docker-compose up

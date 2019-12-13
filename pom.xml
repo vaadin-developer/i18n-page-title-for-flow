@@ -24,14 +24,14 @@
 
   <parent>
     <groupId>org.rapidpm</groupId>
-    <artifactId>rapidpm-vaadin-dependencies-vXX</artifactId>
-    <version>04.01.15-RPM</version>
+    <artifactId>rapidpm-vaadin-dependencies-v14</artifactId>
+    <version>04.05.02-RPM</version>
   </parent>
 
   <groupId>org.rapidpm.vaadin</groupId>
   <artifactId>i18n-page-title-for-flow</artifactId>
   <name>i18N Page Title for Flow</name>
-  <version>00.08.04-RPM-SNAPSHOT</version>
+  <version>00.08.04-RPM</version>
 
   <packaging>jar</packaging>
 
@@ -77,55 +77,8 @@
     </license>
   </licenses>
 
-
   <properties>
-    <!--technical-->
     <jdk.version>1.8</jdk.version>
-    <!--Properties for Vaadin Directory-->
-    <Vaadin-Package-Version>1</Vaadin-Package-Version>
-    <Vaadin-Addon>${project.build.finalName}.${project.packaging}</Vaadin-Addon>
   </properties>
-
-
-  <build>
-<!--    <plugins>-->
-<!--      &lt;!&ndash;For Vaadin Directory deployment&ndash;&gt;-->
-<!--      <plugin>-->
-<!--        <groupId>org.apache.maven.plugins</groupId>-->
-<!--        <artifactId>maven-jar-plugin</artifactId>-->
-<!--        <configuration>-->
-<!--          <archive>-->
-<!--            <index>true</index>-->
-<!--            <manifest>-->
-<!--              <addClasspath>false</addClasspath>-->
-<!--              <addDefaultImplementationEntries>true</addDefaultImplementationEntries>-->
-<!--            </manifest>-->
-<!--&lt;!&ndash;            <manifestEntries>&ndash;&gt;-->
-<!--&lt;!&ndash;              <Vaadin-Package-Version>${Vaadin-Package-Version}</Vaadin-Package-Version>&ndash;&gt;-->
-<!--&lt;!&ndash;            </manifestEntries>&ndash;&gt;-->
-<!--          </archive>-->
-<!--        </configuration>-->
-<!--      </plugin>-->
-
-<!--      <plugin>-->
-<!--        <groupId>org.apache.maven.plugins</groupId>-->
-<!--        <artifactId>maven-assembly-plugin</artifactId>-->
-<!--        <configuration>-->
-<!--          <appendAssemblyId>false</appendAssemblyId>-->
-<!--          <descriptors>-->
-<!--            <descriptor>assembly/assembly.xml</descriptor>-->
-<!--          </descriptors>-->
-<!--        </configuration>-->
-<!--        <executions>-->
-<!--          <execution>-->
-<!--            <goals>-->
-<!--              <goal>single</goal>-->
-<!--            </goals>-->
-<!--            <phase>install</phase>-->
-<!--          </execution>-->
-<!--        </executions>-->
-<!--      </plugin>-->
-<!--    </plugins>-->
-  </build>
 
 </project>

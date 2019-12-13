@@ -35,7 +35,10 @@ import com.vaadin.flow.server.UIInitListener;
 import com.vaadin.flow.server.VaadinService;
 import com.vaadin.flow.server.VaadinServiceInitListener;
 
-public class I18NPageTitleEngine implements VaadinServiceInitListener, UIInitListener, BeforeEnterListener, HasLogger {
+public class I18NPageTitleEngine implements VaadinServiceInitListener,
+                                            UIInitListener,
+                                            BeforeEnterListener,
+                                            HasLogger {
 
 
   public static final String ERROR_MSG_NO_LOCALE = "no locale provided and i18nProvider #getProvidedLocales()# list is empty !! ";

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 #
 # Copyright © 2018 Sven Ruppert (sven.ruppert@gmail.com)
 #
@@ -15,5 +15,7 @@
 # limitations under the License.
 #
 
-docker rm deploy_i18n-page-title-for-flow
-docker-compose up
+docker build -t demoapps/i18n-page-title-for-flow .
+#docker tag demoapps/i18n-page-title-for-flow:latest demoapps/i18n-page-title-for-flow:20190826-001
+#docker push demoapps/i18n-page-title-for-flow:20190826-001
+docker push demoapps/i18n-page-title-for-flow:latest

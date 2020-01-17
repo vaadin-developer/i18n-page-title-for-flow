@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 #
 # Copyright © 2018 Sven Ruppert (sven.ruppert@gmail.com)
 #
@@ -15,5 +15,13 @@
 # limitations under the License.
 #
 
-docker rm deploy_i18n-page-title-for-flow
-docker-compose up
+
+docker run \
+       -it \
+       -p 8899:8899 \
+       --rm \
+       --name run \
+       -v "$(pwd)":/usr/src/mymaven \
+       -w /usr/src/mymaven \
+       svenruppert/adopt:1.8.212-04:latest \
+       java -jar 03_demo/target/vaadin-app.jar
